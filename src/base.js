@@ -6,7 +6,7 @@
    * extension CONFIG
    * -----------------------------------------------
    */
-  const DEBUG = flase
+  const DEBUG = false
   const LOCAL_BASE_PATH = 'http://localhost:8118/'
   const REMOTE_BASE_PATH = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
   const DOMAIN_CONF = {
