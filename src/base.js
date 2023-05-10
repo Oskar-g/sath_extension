@@ -6,7 +6,7 @@
    * extension CONFIG
    * -----------------------------------------------
    */
-  const DEBUG = true;
+  const DEBUG = false;
   const DOMAIN_CONF = {
     'https://www.idealista.com/*': {
       'script': 'idealista/main.js',

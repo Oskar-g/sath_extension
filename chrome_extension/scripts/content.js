@@ -6,7 +6,7 @@
    * extension CONFIG
    * -----------------------------------------------
    */
-  const DEBUG = true;
+  const DEBUG = false;
   const LOCAL = 'http://localhost/base.js'
   const RELEASE = 'https://github.com/oskar-g/sath_extension/src/base.js'
 
