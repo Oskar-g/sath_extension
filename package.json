@@ -1,0 +1,22 @@
+{
+  "name": "sath_extension",
+  "version": "1.0.0",
+  "description": "chrome extension multipurpose",
+  "main": "node_server.js",
+  "scripts": {
+    "start": "node node_server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oskar-g/sath_extension.git"
+  },
+  "author": "sathariel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oskar-g/sath_extension/issues"
+  },
+  "homepage": "https://github.com/oskar-g/sath_extension#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
