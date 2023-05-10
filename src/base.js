@@ -14,7 +14,7 @@
     }
   }
   const LOCAL = 'http://localhost/'
-  const RELEASE = 'https://github.com/oskar-g/sath_extension/src/'
+  const RELEASE = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
 
   /*
    * -----------------------------------------------

@@ -8,7 +8,7 @@
    */
   const DEBUG = false;
   const LOCAL = 'http://localhost/base.js'
-  const RELEASE = 'https://github.com/oskar-g/sath_extension/src/base.js'
+  const RELEASE = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/base.js'
 
   /*
    * -----------------------------------------------
