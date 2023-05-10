@@ -6,7 +6,7 @@
    * extension CONFIG
    * -----------------------------------------------
    */
-//  const script = 'http://localhost/base.js'
+//  const script = 'http://loca-lhost/base.js'
   const script = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/base.js'
 
   /*

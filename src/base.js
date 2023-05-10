@@ -6,7 +6,7 @@
    * extension CONFIG
    * -----------------------------------------------
    */
-//  const BASE_PATH = 'http://localhost/'
+//  const BASE_PATH = 'http://loca-lhost/'
   const BASE_PATH = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
   const DOMAIN_CONF = {
     'https://www.idealista.com/*': {
