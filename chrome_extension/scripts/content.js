@@ -6,16 +6,14 @@
    * extension CONFIG
    * -----------------------------------------------
    */
-  const DEBUG = false;
-  const LOCAL = 'http://localhost/base.js'
-  const RELEASE = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/base.js'
+//  const script = 'http://localhost/base.js'
+  const script = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/base.js'
 
   /*
    * -----------------------------------------------
    * extension LOGIC
    * -----------------------------------------------
    */
-  const script = DEBUG ? LOCAL : RELEASE
   
   let scriptBlock=document.createElement('script')
   scriptBlock.setAttribute("type","text/javascript")

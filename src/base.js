@@ -6,22 +6,20 @@
    * extension CONFIG
    * -----------------------------------------------
    */
-  const DEBUG = false;
+//  const BASE_PATH = 'http://localhost/'
+  const BASE_PATH = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
   const DOMAIN_CONF = {
     'https://www.idealista.com/*': {
       'script': 'idealista/main.js',
       'style': 'idealista/main.css',
     }
   }
-  const LOCAL = 'http://localhost/'
-  const RELEASE = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
 
   /*
    * -----------------------------------------------
    * extension LOGIC
    * -----------------------------------------------
    */
-  const BASE_PATH = DEBUG ? LOCAL : RELEASE
   const [conf] = Object.keys(DOMAIN_CONF)
     .filter(k => new RegExp(k).test(window.location.href))
     .map(k => DOMAIN_CONF[k])
