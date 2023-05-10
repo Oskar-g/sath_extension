@@ -1,5 +1,5 @@
 (function () {
-    'use strict';
+    'use strict'
 
     const sathExtension = `
         <div id="sathExtension">
@@ -16,23 +16,23 @@
 
     setInterval(() => {
         if (!isInmueble()) {
-            const savedIds = getSavedIds();
+            const savedIds = getSavedIds()
 
             const inmuebles = Array.from(document.querySelectorAll('section.items-container.items-list article'))
-                .map(e => { e.style.display = ''; return e; })
+            inmuebles.forEach(e => e.style.display = '')
 
             if (!isHideFavs()) {
                 inmuebles
                     .filter(e => savedIds.includes(e.dataset['adid']))
-                    .forEach(e => { e.style.display = 'none'; });
+                    .forEach(e => e.style.display = 'none')
             }
         }
 
 
-    }, 1000);
+    }, 1000)
 
     function init() {
-        if (!isListado() && !isInmueble()) { return; }
+        if (!isListado() && !isInmueble()) { return }
 
         let extension = document.createElement('div')
         document.body.appendChild(extension)
@@ -156,7 +156,7 @@
     // -------------------------------------------------------------------------------------
 
     function isLiked() {
-        return isInmueble() && getSaved().includes(window.location.href);
+        return isInmueble() && getSaved().includes(window.location.href)
     }
 
     function isListado() {
@@ -201,4 +201,4 @@
 
 
     init()
-})();
+})()

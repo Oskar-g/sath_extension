@@ -1,12 +1,12 @@
 (function () {
-  'use strict';
+  'use strict'
 
   /*
    * -----------------------------------------------
    * extension CONFIG
    * -----------------------------------------------
    */
-  const script = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/base.js'
+  const script = 'http://localhost:8118/base.js'
 
   /*
    * -----------------------------------------------
@@ -19,4 +19,4 @@
   scriptBlock.setAttribute("src", script)
   document.querySelector("head").appendChild(scriptBlock)
 
-})();
+})()

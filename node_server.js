@@ -1,11 +1,11 @@
-var express = require("express");
-var app = express();
+const express = require("express")
+const PORT = 8118
+const HOST = '127.0.0.1'
+const STATICS = "src"
 
-app.use(express.static("src"));
-app.get("/", function(req,res){
-  res.render("home");
-});
+const app = express()
 
-app.listen(80, '127.0.0.1', function(){
-console.log("server started");
-});
+app.use(express.static(STATICS))
+app.get("/", (req, res) => { })
+
+app.listen(PORT, HOST, () => console.log(`server started at ${HOST}:${PORT}`))

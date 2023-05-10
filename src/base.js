@@ -1,45 +1,86 @@
 (function () {
-  'use strict';
+  'use strict'
 
   /*
    * -----------------------------------------------
    * extension CONFIG
    * -----------------------------------------------
    */
-  const BASE_PATH = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
+  const DEBUG = flase
+  const LOCAL_BASE_PATH = 'http://localhost:8118/'
+  const REMOTE_BASE_PATH = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
   const DOMAIN_CONF = {
-    'https://www.idealista.com/*': {
+    'idealista.com/*': {
       'script': 'idealista/main.js',
       'style': 'idealista/main.css',
-    }
+    },
+    'forocoches.com/*': {
+      'script': 'forocoches/main.js',
+    },
   }
 
   /*
-   * -----------------------------------------------
-   * extension LOGIC
-   * -----------------------------------------------
-   */
-  const [conf] = Object.keys(DOMAIN_CONF)
-    .filter(k => new RegExp(k).test(window.location.href))
-    .map(k => DOMAIN_CONF[k])
-    .map(c => ({
-      "script":c.script?`${BASE_PATH}${c.script}`:null,
-      "style": c.style?`${BASE_PATH}${c.style}`:null
-    }));
+  * -----------------------------------------------
+  * extension LOGIC
+  * -----------------------------------------------
+  */
 
-  if (conf?.script){
-    const scriptBlock=document.createElement('script')
-    scriptBlock.setAttribute("type","text/javascript")
-    scriptBlock.setAttribute("src", conf?.script)
-    document.querySelector("head").appendChild(scriptBlock)
+  const getResourcesConfig = function () {
+    const BASE_PATH = DEBUG ? LOCAL_BASE_PATH : REMOTE_BASE_PATH
+    const [conf] = Object.keys(DOMAIN_CONF)
+      .filter(domain => new RegExp(`http(s)?://(www.)?${domain}`).test(window.location.href))
+      .map(domain => DOMAIN_CONF[domain])
+      .map(conf => ({
+        "script": conf.script ? `${BASE_PATH}${conf.script}` : null,
+        "style": conf.style ? `${BASE_PATH}${conf.style}` : null
+      }))
+      return conf
   }
 
-  if (conf?.style){
-    const cssBlock=document.createElement('link')
-    cssBlock.setAttribute("type","text/css")
-    cssBlock.setAttribute("rel","stylesheet")
-    cssBlock.setAttribute("href", conf?.style)
-    document.querySelector("head").appendChild(cssBlock)
+  const loadLocal = function (conf) {
+    if (conf?.script) {
+      const scriptBlock = document.createElement('script')
+      scriptBlock.setAttribute("type", "text/javascript")
+      scriptBlock.setAttribute("src", conf?.script)
+      document.querySelector("head").appendChild(scriptBlock)
+    }
+
+    if (conf?.style) {
+      const cssBlock = document.createElement('link')
+      cssBlock.setAttribute("type", "text/css")
+      cssBlock.setAttribute("rel", "stylesheet")
+      cssBlock.setAttribute("href", conf?.style)
+      document.querySelector("head").appendChild(cssBlock)
+    }
   }
 
-})();
+  const loadRemote = function(conf) {
+    if (conf?.script) {
+      fetch(conf?.script)
+        .then(e => e.text())
+        .then(e => {
+          const scriptBlock = document.createElement('script')
+          scriptBlock.setAttribute("type", "text/javascript")
+          scriptBlock.innerHTML = e
+          document.querySelector("head").appendChild(scriptBlock)
+        })
+    }
+
+    if (conf?.style) {
+      fetch(conf?.style)
+        .then(e => e.text())
+        .then(e => {
+          const style = document.createElement('style')
+          style.innerHTML = e
+          document.querySelector("head").appendChild(style)
+        })
+    }
+  }
+
+  const action = DEBUG ? loadLocal : loadRemote
+  action(getResourcesConfig())
+  console.log(action)
+  console.log(getResourcesConfig())
+
+
+})()

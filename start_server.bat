@@ -1,1 +1,2 @@
-npm run start
+git pull
+npm i && npm run start
