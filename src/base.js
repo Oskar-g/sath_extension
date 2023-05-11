@@ -26,6 +26,9 @@
     'lectortmo.com/*': {
       'script': 'lectortmo/main.js',
     },
+    'video\\d+.woopeedoopcmwhrs.xyz/*': {
+      'script': 'woopeedoopcmwhrs/main.js',
+    },
   }
 
   /*
