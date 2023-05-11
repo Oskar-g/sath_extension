@@ -17,6 +17,12 @@
     'forocoches.com/*': {
       'script': 'forocoches/main.js',
     },
+    'lectortmo.com/*': {
+      'script': 'lectortmo/main.js',
+    },
+    'cw/*': {
+      'script': 'cw/main.js',
+    },
   }
 
   /*
