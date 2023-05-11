@@ -10,18 +10,21 @@
   const LOCAL_BASE_PATH = 'http://localhost:8118/'
   const REMOTE_BASE_PATH = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/'
   const DOMAIN_CONF = {
-    'idealista.com/*': {
-      'script': 'idealista/main.js',
-      'style': 'idealista/main.css',
+    'orteil.dashnet.org/cookieclicker/*': {
+      'script': 'cookieclicker/main.js',
+    },
+    'cw/*': {
+      'script': 'cw/main.js',
     },
     'forocoches.com/*': {
       'script': 'forocoches/main.js',
     },
+    'idealista.com/*': {
+      'script': 'idealista/main.js',
+      'style': 'idealista/main.css',
+    },
     'lectortmo.com/*': {
       'script': 'lectortmo/main.js',
-    },
-    'cw/*': {
-      'script': 'cw/main.js',
     },
   }
 
