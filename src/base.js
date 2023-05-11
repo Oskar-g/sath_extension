@@ -43,7 +43,7 @@
         "script": conf.script ? `${BASE_PATH}${conf.script}` : null,
         "style": conf.style ? `${BASE_PATH}${conf.style}` : null
       }))
-      return conf
+    return conf
   }
 
   const loadLocal = function (conf) {
@@ -63,7 +63,7 @@
     }
   }
 
-  const loadRemote = function(conf) {
+  const loadRemote = function (conf) {
     if (conf?.script) {
       fetch(conf?.script)
         .then(e => e.text())
