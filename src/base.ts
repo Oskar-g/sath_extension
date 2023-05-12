@@ -9,7 +9,7 @@ import { REMOTE_SCRIPTS, LOCAL_SCRIPTS } from './common/env';
    * extension CONFIG
    * -----------------------------------------------
    */
-  const DEBUG = true
+  const DEBUG = false
   const e = ''
   const DOMAIN_CONF: any = {
     'orteil.dashnet.org/cookieclicker/*': {

@@ -33,7 +33,7 @@ exports.querySelectorAll = querySelectorAll;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.REMOTE_SCRIPTS = exports.LOCAL_SCRIPTS = void 0;
 exports.LOCAL_SCRIPTS = 'http://127.0.0.1:8118/';
-exports.REMOTE_SCRIPTS = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/src/';
+exports.REMOTE_SCRIPTS = 'https://raw.githubusercontent.com/Oskar-g/sath_extension/main/dist/src/';
 
 
 /***/ })
@@ -83,13 +83,13 @@ const env_1 = __webpack_require__(/*! ./common/env */ "./src/common/env.ts");
      * extension CONFIG
      * -----------------------------------------------
      */
-    const DEBUG = true;
+    const DEBUG = false;
     const e = '';
     const DOMAIN_CONF = {
         'orteil.dashnet.org/cookieclicker/*': {
             'script': 'cookieclicker.js',
         },
-        'camwhores.tv/*': {
+        'cw/*': {
             'script': 'cw.js',
         },
         'forocoches.com/*': {
