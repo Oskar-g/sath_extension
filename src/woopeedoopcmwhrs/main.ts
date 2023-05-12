@@ -1,4 +1,5 @@
-// Carga videos a partir de url's .webm
+import { querySelector } from "../common/documentLib"
+
 (function () {
     function init() {
 
@@ -7,9 +8,9 @@
             const a = document.createElement('a')
             a.setAttribute('download', '')
             a.href = window.location.href
-            document.querySelector('body').appendChild(a)
+            querySelector('body')?.appendChild(a)
             a.click()
-            document.querySelector('body').removeChild(a)
+            querySelector('body')?.removeChild(a)
             video.pause()
         }
     }
