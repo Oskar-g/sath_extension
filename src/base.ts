@@ -10,7 +10,6 @@ import { REMOTE_SCRIPTS, LOCAL_SCRIPTS } from './common/env';
    * -----------------------------------------------
    */
   const DEBUG = false
-  const e = ''
   const DOMAIN_CONF: any = {
     'orteil.dashnet.org/cookieclicker/*': {
       'script': 'cookieclicker.js',
@@ -29,7 +28,8 @@ import { REMOTE_SCRIPTS, LOCAL_SCRIPTS } from './common/env';
       'script': 'lectortmo.js',
     },
     'video\\d+.woopeedoopcmwhrs.xyz/*': {
-      'script': 'woopeedoopcmwhrs.js',
+      'script': 'videodownload.js',
+    },
     },
   }
 

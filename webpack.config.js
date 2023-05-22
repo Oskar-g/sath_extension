@@ -55,7 +55,7 @@ const modules = [
     { entry: "./src/forocoches/main.js", output: "forocoches.js" },
     { entry: "./src/lectortmo/main.ts", output: "lectortmo.js" },
     { entry: "./src/idealista/main.js", output: "idealista.js" },
-    { entry: "./src/woopeedoopcmwhrs/main.ts", output: "woopeedoopcmwhrs.js" },
+    { entry: "./src/videodownload/main.ts", output: "videodownload.js" },
 ].map(e => Object.assign({}, baseConfig, {
     entry: e.entry,
     output: {

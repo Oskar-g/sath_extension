@@ -54,48 +54,25 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 var exports = __webpack_exports__;
-/*!************************!*\
-  !*** ./src/cw/main.ts ***!
-  \************************/
+/*!***********************************!*\
+  !*** ./src/videodownload/main.ts ***!
+  \***********************************/
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const documentLib_1 = __webpack_require__(/*! ../common/documentLib */ "./src/common/documentLib.ts");
-// Carga videos a partir de url's .webm
 (function () {
     function init() {
-        setInterval(() => {
-            Array.from(document.querySelectorAll('.item.private'))
-                .forEach(e => e.style.display = 'none');
-        }, 500);
-        document.addEventListener('keydown', (e) => {
-            var _a, _b;
-            if (!['ArrowLeft', 'ArrowRight'].includes(e.key))
-                return;
-            const pages = Array.from(document.querySelectorAll('.pagination-holder .page,.page-current') || []);
-            const currentPage = pages.findIndex(e => e.className == 'page-current');
-            const keys = {
-                'ArrowLeft': () => Math.max(currentPage - 1, 0),
-                'ArrowRight': () => Math.min(currentPage + 1, pages.length),
-            };
-            const cosa = keys[e.key];
-            const index = cosa();
-            (_b = (_a = pages[index]) === null || _a === void 0 ? void 0 : _a.querySelector('a')) === null || _b === void 0 ? void 0 : _b.click();
-        });
-        setTimeout(() => {
-            var _a;
-            const video = (_a = document.querySelector('video')) === null || _a === void 0 ? void 0 : _a.src;
-            if (video) {
-                console.log(video);
-                fetch(video)
-                    .then(e => {
-                    var _a;
-                    console.log(e);
-                    const btn = document.createElement('button');
-                    btn.innerHTML = `<a style="color:black" href="${e.url}" download='eeee.mp4'>DOWNLOAD</a>`;
-                    (_a = (0, documentLib_1.querySelector)('.block-video')) === null || _a === void 0 ? void 0 : _a.prepend(btn);
-                });
-            }
-        }, 3000);
+        var _a, _b;
+        const video = document.querySelector('video');
+        if (video) {
+            const a = document.createElement('a');
+            a.setAttribute('download', '');
+            a.href = window.location.href;
+            (_a = (0, documentLib_1.querySelector)('body')) === null || _a === void 0 ? void 0 : _a.appendChild(a);
+            a.click();
+            (_b = (0, documentLib_1.querySelector)('body')) === null || _b === void 0 ? void 0 : _b.removeChild(a);
+            video.pause();
+        }
     }
     init();
 })();
